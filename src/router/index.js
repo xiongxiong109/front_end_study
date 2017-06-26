@@ -32,7 +32,12 @@ export default new Router({
     			path: 'rad_circle',
     			name: 'rad_circle',
     			component: CSStudy.RadCircle
-    		}
+    		},
+        { // 连字符换行
+          path: 'dd_dt',
+          name: 'dd_dt',
+          component: CSStudy.DdDt
+        }
     	]
     }
   ]
