@@ -8,20 +8,44 @@
 		<br>
 		<p>实例: 单行显示</p>
 		<div class="ui-dls">
-			<dt>姓名</dt>
-			<dd>Bear Cambridge</dd>
-			<dt>年龄</dt>
-			<dd>24</dd>
-			<dt>爱好</dt>
-			<dd>足球</dd>
-			<dd>coding</dd>
-			<dd>妹纸</dd>
+			<template v-for="item in lists">
+				<dt>{{item.nm}}</dt>
+				<dd v-for="vs in item.vs">{{vs}}</dd>
+			</template>
 		</div>
 	</div>
 </template>
+<script type="text/javascript">
+	export default {
+		data() {
+			return {
+				lists: [
+					{
+						nm: '姓名',
+						vs: ['Bear Cambridge']
+					},
+					{
+						nm: '昵称',
+						vs: ['酱酱熊', '熊仔109', '小小酱油熊', '大帅比']
+					},
+					{
+						nm: '年龄',
+						vs: [24]
+					},
+					{
+						nm: '爱好',
+						vs: ['足球', 'coding', '妹纸']
+					}
+				]
+			}
+		}
+	}
+</script>
 <style type="text/css">
 	.ui-dls {
 		text-align: left;
+		width: 80%;
+		margin: auto;
 	}
 	dt, dd {
 		display: inline;
