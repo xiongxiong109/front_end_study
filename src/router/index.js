@@ -37,6 +37,11 @@ export default new Router({
           path: 'dd_dt',
           name: 'dd_dt',
           component: CSStudy.DdDt
+        },
+        { // 3d变换
+          path: 'd3_trans',
+          name: 'd3_trans',
+          component: CSStudy.D3Trans
         }
     	]
     }
