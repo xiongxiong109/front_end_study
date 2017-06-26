@@ -15,7 +15,7 @@
 			return {
 				title: 'Front_End Study',
 				navLinks: [
-					{nm: 'rad_circle', url: '/css_study/rad_circle'}
+					{nm: 'css_study', url: '/css_study/nav'}
 				]
 			}
 		}

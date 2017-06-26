@@ -9,7 +9,7 @@ Vue.use(Router)
 export default new Router({
 	mode: 'history',
   routes: [
-  	{ // 301
+  	{
   		path: '/',
   		redirect: '/home'
   	},
@@ -23,6 +23,11 @@ export default new Router({
     	name: 'css_study',
     	component: CSStudy.Layer,
     	children: [
+        { // css导航部分
+          path: 'nav',
+          name: 'nav',
+          component: CSStudy.Nav
+        },
     		{ // css内凹圆角
     			path: 'rad_circle',
     			name: 'rad_circle',
