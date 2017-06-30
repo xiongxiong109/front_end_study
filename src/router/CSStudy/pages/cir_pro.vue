@@ -35,53 +35,43 @@
 	}
 </script>
 <style type="text/css">
-	.container-box {
-		height: 300px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
 	.progress {
-		width: 150px;
-		height: 150px;
-		border-radius: 50%;
-		color: #fff;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		width: 200px;
+		height: 200px;
+		margin: auto;
+		/*background-color: #c00;*/
+		position: relative;
 		overflow: hidden;
-		border: 2px solid #fff;
-		background: #000;
-	}
-	.progress:after {
-		content: '';
-		position: absolute;
-		width: 146px;
-		height: 146px;
-		border-radius: 50%;
-		background-color: #fff;
 	}
 	.left-circle, .right-circle {
-		width: 150px;
-		height: 150px;
+		width: 50%;
+		height: 100%;
+		position: absolute;
 		overflow: hidden;
-		position: relative;
+	}
+	.left-circle {
+		left: 0;
+		/*background-color: #ddd;*/
+	}
+	.right-circle {
+		right: 0;
+		/*background-color: #ccc;*/
 	}
 	.half-circle {
+		width: 200%;
+		height: 100%;
+		border-radius: 50%;
 		position: absolute;
 		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #cdcdcd;
+		border: 4px solid #c00;
+		box-sizing: border-box;
 	}
 	.left-circle .half-circle {
-		content: '';
-		transform-origin: right center;
-		transform: rotateZ(0);
+		left: 0;
+		clip: rect(0 200px 200px 100px);
 	}
 	.right-circle .half-circle {
-		transform-origin: left;
-		transform: rotateZ(0);
+		right: 0;
+		clip: rect(0 100px 200px 0);
 	}
 </style>
