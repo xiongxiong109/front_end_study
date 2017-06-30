@@ -42,6 +42,11 @@ export default new Router({
           path: 'd3_trans',
           name: 'd3_trans',
           component: CSStudy.D3Trans
+        },
+        { // 圆形进度条
+          path: 'circle_process',
+          name: 'circle_process',
+          component: CSStudy.CirPro
         }
     	]
     }
