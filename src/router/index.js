@@ -1,8 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
 import Home from '@/router/Home';
 import CSStudy from '@/router/CSStudy';
+import JSStudy from '@/router/JSStudy';
 
 Vue.use(Router)
 
@@ -49,6 +50,23 @@ export default new Router({
           component: CSStudy.CirPro
         }
     	]
+    },
+    {
+      path: '/js_study',
+      name: 'js_study',
+      component: JSStudy.Layer,
+      children: [
+        { // js导航部分
+          path: 'nav',
+          name: 'nav',
+          component: JSStudy.Nav
+        },
+        { // 异步流程
+          path: 'async',
+          name: 'async',
+          component: JSStudy.Async
+        }
+      ]
     }
   ]
 })

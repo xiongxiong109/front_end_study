@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<com-nav :links="links" root="css_study"/>
+		<com-nav :links="links" root="js_study" />
 	</div>
 </template>
 <script type="text/javascript">
