@@ -17,6 +17,8 @@
 	</div>
 </template>
 <script type="text/javascript">
+	import axios from 'axios';
+
 	export default {
 		data: () => ({
 			isFetching: false,
@@ -31,7 +33,8 @@
 					this.getUserLoginInfo()
 					.then(this.getPayInfo)
 					.then(this.goPay)
-					.then(() => {
+					.then((res) => {
+						console.log(res);
 						this.tip = 'success';
 					})
 				} catch (e) {
@@ -49,14 +52,16 @@
 				return new Promise((resolve, reject) => {
 					setTimeout(() => {
 						resolve({payId: '123asd1as3d'});
-					}, 3000);
+					}, 200);
 				});
 			},
 			fetchPay() {
 				return new Promise((resolve, reject) => {
-					setTimeout(() => {
-						resolve({code: 'success'});
-					}, 2000);
+					axios.post('/pay', {...this.uInfo, ...this.payInfo})
+					.then(res => {
+						resolve(res.data);
+					})
+					.catch(e => {reject(e)});
 				});
 			},
 			// 通过async字段来设置一个异步函数
