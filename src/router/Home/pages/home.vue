@@ -1,6 +1,6 @@
 <!-- home page -->
 <template>
-	<div class="home-box">
+	<div class="home-box" v-track="{id: 10000, value: 'home_page'}">
 		<h4 class="home-page">{{title}}</h4>
 		<ul class="nav-groups">
 			<li v-for="item in navLinks">

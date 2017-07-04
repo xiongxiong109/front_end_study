@@ -21,9 +21,6 @@
 				let links = this.links;
 				return links.filter(item => fi.test(item.nm) || fi.test(item.path));
 			}
-		},
-		created() {
-			console.log(this.links)
 		}
 	}
 </script>

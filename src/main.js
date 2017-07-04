@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 引入全局pv自动埋点
+import UBT from '@/plugins/ubt';
+Vue.use(UBT);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

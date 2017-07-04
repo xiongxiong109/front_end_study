@@ -65,6 +65,11 @@ export default new Router({
           path: 'async',
           name: 'async',
           component: JSStudy.Async
+        },
+        { // mutationObserver api
+          path: 'mutation_observer',
+          name: 'mutation_observer',
+          component: JSStudy.MutationObs
         }
       ]
     }
