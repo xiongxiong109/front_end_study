@@ -61,7 +61,7 @@
 					let randomTimer = Math.random() * 1500 + 1000;
 					setTimeout(() => {
 						let randomLockState = Math.random();
-						if (randomLockState <= .01) {
+						if (randomLockState <= .2) {
 							reject(`room${room.id} unlock failed`);
 						}
 						resolve(randomLockState);
