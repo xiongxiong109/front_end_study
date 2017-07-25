@@ -66,6 +66,11 @@ export default new Router({
           name: 'async',
           component: JSStudy.Async
         },
+        { // promise 与 异步组件
+          path: 'async_component',
+          name: 'async_component',
+          component: JSStudy.AsyncComponent
+        },
         { // mutationObserver api
           path: 'mutation_observer',
           name: 'mutation_observer',
