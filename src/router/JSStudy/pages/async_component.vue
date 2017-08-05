@@ -39,6 +39,7 @@
 	}
 </style>
 <script type="text/javascript">
+	import axios from 'axios'
 	export default {
 		data: () => {
 			return {
@@ -55,7 +56,29 @@
 				isRunning: false
 			}
 		},
+		mounted() {
+			this.fetchData();
+		},
 		methods: {
+			// async 配合Promise使用
+			fetchData() {
+				const fetch = () => new Promise((resolve, reject) =>{
+					axios.get('/')
+					.then(res => setTimeout(() => {
+						resolve(res.data)
+					}, 1e3))
+					.catch(err => setTimeout(() => {
+						reject(err)
+					}, 300))
+				});
+				const asyncFetch = async () => {
+					console.log('x');
+					let res = await fetch();
+					console.log(res);
+					console.log('end');
+				}
+				asyncFetch();
+			},
 			createPromise(room) {
 				let roomUnlock = new Promise((resolve, reject) => {
 					let randomTimer = Math.random() * 1500 + 1000;
