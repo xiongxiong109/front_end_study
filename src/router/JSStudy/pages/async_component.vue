@@ -57,28 +57,27 @@
 			}
 		},
 		mounted() {
-			this.fetchData();
+			const fetch = async () => {
+				let rst = '';
+				try {
+					rst = await this.fetchData();
+				} catch(err) {
+					rst = err
+				}
+				console.log(rst);
+			}
+			fetch();
 		},
 		methods: {
-			// async 配合Promise使用
-			fetchData() {
-				const fetch = () => new Promise((resolve, reject) =>{
-					axios.get('/')
-					.then(res => setTimeout(() => {
-						resolve(res.data)
-					}, 1e3))
-					.catch(err => setTimeout(() => {
-						reject(err)
-					}, 300))
-				});
-				const asyncFetch = async () => {
-					console.log('x');
-					let res = await fetch();
-					console.log(res);
-					console.log('end');
-				}
-				asyncFetch();
-			},
+			// async 配合Promise使用, await 只能出现在async函数中, 并且
+			// await 等待的只能是一个异步函数, 如果等待的不是异步函数
+			// 会报错: await is a reserved word
+			fetchData: async () => new Promise((resolve, reject) => {
+				axios
+				.get('https://api.douban.com/v2/book/1220562')
+				.then(res => reject(res.data))
+				.catch(err => reject(err));
+			}),
 			createPromise(room) {
 				let roomUnlock = new Promise((resolve, reject) => {
 					let randomTimer = Math.random() * 1500 + 1000;
