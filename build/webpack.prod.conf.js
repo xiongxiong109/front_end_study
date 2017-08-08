@@ -8,6 +8,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 var env = config.build.env
 
@@ -90,7 +91,13 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    // 在prod的时候, 根据页面的首屏内容, 预渲染出一些SEO友好的html文本
+    // 与ssr不同, prerender只是做预渲染静态页面, ssr则是服务端输出动态页面
+    new PrerenderSpaPlugin(
+      path.join(__dirname, '../dist'),
+      ['/', '/home', '/js_study/nav', '/css_study/nav']
+    )
   ]
 })
 
