@@ -4,5 +4,7 @@ module.exports = {
 	RadCircle(resolve) { require(['./pages/rad_circle'], resolve) },
 	DdDt(resolve) { require(['./pages/dd_dt'], resolve) },
 	D3Trans(resolve) { require(['./pages/d3_trans'], resolve) },
-	CirPro(resolve) { require(['./pages/cir_pro'], resolve) }
+	CirPro(resolve) { require(['./pages/cir_pro'], resolve) },
+	AfterAttr(resolve) { require(['./pages/after_attr'], resolve) },
+	AutoHeightTransition(resolve) { require(['./pages/auto_height_transition'], resolve) }
 }

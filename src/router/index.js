@@ -48,6 +48,16 @@ export default new Router({
           path: 'circle_process',
           name: 'circle_process',
           component: CSStudy.CirPro
+        },
+        { // css attr function
+          path: 'after_attr',
+          name: 'after_attr',
+          component: CSStudy.AfterAttr
+        },
+        { // 高度transition
+          path: 'auto_height_tran',
+          name: 'auto_height_tran',
+          component: CSStudy.AutoHeightTransition
         }
     	]
     },
