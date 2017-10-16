@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Home from '@/router/Home';
 import CSStudy from '@/router/CSStudy';
 import JSStudy from '@/router/JSStudy';
+import FrameWork from '@/router/Frame';
 
 Vue.use(Router)
 
@@ -87,6 +88,11 @@ export default new Router({
           component: JSStudy.MutationObs
         }
       ]
+    },
+    {
+      path: '/vu_bear/index',
+      name: 'vu_bear_index',
+      component: FrameWork.Index
     }
   ]
 })
