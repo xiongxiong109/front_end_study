@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import Home from '@/router/Home';
 import CSStudy from '@/router/CSStudy';
 import JSStudy from '@/router/JSStudy';
+import FrontEnd from '@/router/FrontEnd';
 import FrameWork from '@/router/Frame';
 
 Vue.use(Router)
@@ -19,6 +20,18 @@ export default new Router({
       path: '/home',
       name: 'home_page',
       component: Home
+    },
+    {
+      path: '/front_end',
+      name: 'front_end',
+      component: FrontEnd.Layer,
+      children: [
+        {
+          path: 'dialog',
+          name: 'dialog',
+          component: FrontEnd.Dialog
+        }
+      ]
     },
     {
     	path: '/css_study',

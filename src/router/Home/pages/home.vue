@@ -15,6 +15,7 @@
 			return {
 				title: 'Front_End Study',
 				navLinks: [
+					{nm: 'front_end_news', url: '/front_end'},
 					{nm: 'css_secrets', url: '/css_study/nav'},
 					{nm: 'js_tips', url: '/js_study/nav'},
 					{nm: '框架测试', url: '/vu_bear/index'}
